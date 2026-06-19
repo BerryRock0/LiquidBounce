@@ -29,5 +29,5 @@ import net.ccbluex.liquidbounce.features.module.ModuleCategories
  */
 object ModuleNoInterpolation : ClientModule("NoInterpolation", ModuleCategories.WORLD) {
 
-    val value by int("ReduceBy", 3, 1..3)
+    val value by int("ReduceBy", 3, 0..20)
 }
