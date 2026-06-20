@@ -43,7 +43,7 @@ import kotlin.math.roundToInt
 
 class SpeedSpeedYPort(parent: ModeValueGroup<*>) : SpeedBHopBase("YPort", parent) {
 
-    private val speed by float("Speed", 0.4f, 0.1f..1f)
+    private val speed by float("Speed", 0.4f, 0f..1f)
 
     @Suppress("unused")
     private val tickHandler = tickHandler {
