@@ -51,11 +51,11 @@ object KillAuraRangeIndicator : ToggleableValueGroup(ModuleKillAura, "RangeIndic
     private val outlineColor by color("OutlineColor", Color4b(255, 255, 255, 120))
 
     private val pulseAnimation by boolean("PulseAnimation", false)
-    private val pulseSpeed by float("PulseSpeed", 2f, 0.5f..5f)
-    private val pulseIntensity by float("PulseIntensity", 0.15f, 0.05f..0.5f)
+    private val pulseSpeed by float("PulseSpeed", 2f, 0f..10f)
+    private val pulseIntensity by float("PulseIntensity", 0.15f, 0f..10f)
 
     private val fadeAnimation by boolean("FadeAnimation", true)
-    private val fadeSpeed by float("FadeSpeed", 0.1f, 0.01f..0.5f)
+    private val fadeSpeed by float("FadeSpeed", 0.1f, 0f..10f)
 
     private val wallRangeColor by color("WallRangeColor", Color4b(255, 165, 0, 0))
     private val scanRangeColor by color("ScanRangeColor", Color4b(100, 100, 255, 0))
