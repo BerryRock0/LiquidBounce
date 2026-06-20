@@ -36,9 +36,9 @@ import net.minecraft.world.phys.Vec3
 
 object CrystalAuraDamageOptions : ValueGroup("Damage") {
 
-    private val maxSelfDamage by float("MaxSelfDamage", 2.0F, 0.0F..10.0F)
-    private val maxFriendDamage by float("MaxFriendDamage", 1.0F, 0.0F..10.0F)
-    private val minEnemyDamage by float("MinEnemyDamage", 5.0F, 0.0F..10.0F)
+    private val maxSelfDamage by float("MaxSelfDamage", 2.0F, 0.0F..20.0F)
+    private val maxFriendDamage by float("MaxFriendDamage", 1.0F, 0.0F..20.0F)
+    private val minEnemyDamage by float("MinEnemyDamage", 5.0F, 0.0F..20.0F)
 
     /**
      * Won't place / break crystals that would kill us.
