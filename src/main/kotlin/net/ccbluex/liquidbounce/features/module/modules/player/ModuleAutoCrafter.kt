@@ -51,7 +51,7 @@ object ModuleAutoCrafter : ClientModule("AutoCrafter", ModuleCategories.PLAYER) 
         )
     )
 
-    private val delay by intRange("Delay", 2..3, 1..20, "ticks")
+    private val delay by intRange("Delay", 2..3, 0..20, "ticks")
     private val stackCrafting by boolean("StackCrafting", true)
     private val sequentialCrafting by boolean("SequentialCrafting", true)
     private val onFull by enumChoice("OnFull", OnFull.WAIT)
