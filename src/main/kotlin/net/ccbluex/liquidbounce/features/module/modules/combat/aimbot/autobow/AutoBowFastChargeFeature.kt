@@ -37,7 +37,7 @@ import net.minecraft.world.item.BowItem
  */
 object AutoBowFastChargeFeature : ToggleableValueGroup(ModuleAutoBow, "FastCharge", false) {
 
-    private val speed by int("Speed", 20, 3..20)
+    private val speed by int("Speed", 20, 0..20)
 
     private val notInTheAir by boolean("NotInTheAir", true)
     private val notDuringMove by boolean("NotDuringMove", false)
