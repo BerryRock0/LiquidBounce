@@ -40,15 +40,15 @@ import kotlin.random.Random
 object ModuleTimerRange : ClientModule("TimerRange", ModuleCategories.COMBAT) {
 
     private val chance by int("Chance", 100, 0..100, "%")
-    private val timerBalanceLimit by float("TimerBalanceLimit", 20f, 0f..50f)
-    private val normalSpeed by float("NormalSpeed", 0.9F, 0.1F..10F)
-    private val inRangeSpeed by float("InRangeSpeed", 0.95F, 0.1F..10F)
-    private val balanceLimitSpeed by float("BalanceLimitSpeed", 0.99F, 0.1F..1F)
-    private val boostSpeed by float("BoostTimer", 2F, 0.1F..10F).apply { tagBy(this) }
-    private val balanceRecoveryIncrement by float("BalanceRecoveryIncrement", 1f, 1f..10f)
+    private val timerBalanceLimit by float("TimerBalanceLimit", 20f, 0f..100f)
+    private val normalSpeed by float("NormalSpeed", 0.9F, 0F..10F)
+    private val inRangeSpeed by float("InRangeSpeed", 0.95F, 0F..10F)
+    private val balanceLimitSpeed by float("BalanceLimitSpeed", 0.99F, 0F..1F)
+    private val boostSpeed by float("BoostTimer", 2F, 0F..10F).apply { tagBy(this) }
+    private val balanceRecoveryIncrement by float("BalanceRecoveryIncrement", 1f, 0f..10f)
     private val distanceToSpeedUp by float("DistanceToSpeedUp", 3.5f, 0f..10f)
     private val distanceToPause by float("DistanceToPause", 3f, 0f..10f)
-    private val distanceToStartWorking by float("DistanceToStartWorking", 100f, 0f..500f)
+    private val distanceToStartWorking by float("DistanceToStartWorking", 100f, 0f..1000f)
     private val pauseOnFlag by boolean("PauseOnFlag", true)
     private val onlyOnGround by boolean("OnlyOnGround", false)
 
