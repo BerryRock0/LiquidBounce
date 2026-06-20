@@ -78,7 +78,7 @@ object ModuleVelocity : ClientModule("Velocity", ModuleCategories.COMBAT, aliase
         )
     ).apply(::tagBy)
 
-    private val delay by intRange("Delay", 0..0, 0..40, "ticks")
+    private val delay by intRange("Delay", 0..0, 0..1200, "ticks")
     private val pauseOnFlag by int("PauseOnFlag", 0, 0..20, "ticks")
 
     internal var pause = 0
