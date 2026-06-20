@@ -72,16 +72,16 @@ import java.util.function.BooleanSupplier
 object ModuleAutoRod : ClientModule("AutoRod", ModuleCategories.COMBAT) {
 
     private val gravityType by enumChoice("GravityType", GravityType.LINEAR)
-    private val range by floatRange("Range", 3.5f..5f, 2f..10f)
-    private val scanExtraRange by floatRange("ScanExtraRange", 0.0f..0.0f, 0.0f..5.0f).onChanged { range ->
+    private val range by floatRange("Range", 3.5f..5f, 0f..10f)
+    private val scanExtraRange by floatRange("ScanExtraRange", 0.0f..0.0f, 0.0f..10.0f).onChanged { range ->
         currentScanExtraRange = range.random()
     }
     private var currentScanExtraRange: Float = scanExtraRange.random()
 
     // Requirements
     private val maxEnemiesNearby by int("MaxEnemiesNearby", 1, 0..10) // 0 = no limit
-    private val minHealth by float("MinHealth", 10f, 1f..20f)
-    private val minTargetHealth by float("MinTargetHealth", 4f, 1f..20f)
+    private val minHealth by float("MinHealth", 10f, 0f..20f)
+    private val minTargetHealth by float("MinTargetHealth", 4f, 0f..20f)
     private val requires by multiEnumChoice<KillAuraRequirements>(
         "Requires",
         choices = enumSetOf(KillAuraRequirements.EMPTY_HAND).complement()
@@ -95,7 +95,7 @@ object ModuleAutoRod : ClientModule("AutoRod", ModuleCategories.COMBAT) {
     private val pointTracker = tree(PointTracker(this))
 
     private val rotations = tree(RotationsValueGroup(this))
-    private val aimOffThreshold by float("AimOffThreshold", 5f, 2f..10f)
+    private val aimOffThreshold by float("AimOffThreshold", 5f, 0f..10f)
 
     private val swingMode by enumChoice("SwingMode", SwingMode.DO_NOT_HIDE)
 
@@ -103,10 +103,10 @@ object ModuleAutoRod : ClientModule("AutoRod", ModuleCategories.COMBAT) {
         tree(TargetRenderer(this, targetTracker))
     }
 
-    private val hitTimeout by int("HitTimeout", 30, 5..200, "ticks")
+    private val hitTimeout by int("HitTimeout", 30, 0..1200, "ticks")
     private val pullOnOutOfRange by boolean("PullOnOutOfRange", true)
     private val slotResetDelay by intRange("SlotResetDelay", 0..0, 0..20, "ticks")
-    private val cooldown by intRange("Cooldown", 4..8, 1..50, "ticks")
+    private val cooldown by intRange("Cooldown", 4..8, 0..1200, "ticks")
 
     private val requirementsMet
         get() = requires.all { it.asBoolean }
