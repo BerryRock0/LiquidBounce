@@ -51,7 +51,7 @@ object FeatureSilentScreen : ToggleableValueGroup(ModuleChestStealer, "SilentScr
     private val drawInventoryTag = object : ToggleableValueGroup(this, "DrawInventoryTag", enabled = true) {
 
         private val background = modes(this, "Background", 0, ::backgroundChoices)
-        private val scale by float("Scale", 1.5F, 0.25F..4F)
+        private val scale by float("Scale", 1.5F, 0F..10F)
         private val renderOffset by vec3d("RenderOffset", useLocateButton = false)
         private val showTitle by boolean("ShowTitle", false)
 
