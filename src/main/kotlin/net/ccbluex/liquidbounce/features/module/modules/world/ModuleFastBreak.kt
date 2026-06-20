@@ -36,7 +36,7 @@ import net.minecraft.network.protocol.game.ServerboundPlayerActionPacket
  */
 object ModuleFastBreak : ClientModule("FastBreak", ModuleCategories.WORLD) {
 
-    private val breakDamage by float("BreakDamage", 0.8f, 0.1f..1f)
+    private val breakDamage by float("BreakDamage", 0.8f, 0f..1f)
     private val onlyTool by boolean("OnlyTool", false)
 
     private val modeChoice = choices("Mode", 0) { arrayOf(NoneMode(it), AbortAnother) }.apply(::tagBy)
