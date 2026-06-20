@@ -49,7 +49,7 @@ internal object KillAuraNotifyWhenFail {
         override val parent: ModeValueGroup<Mode>
             get() = mode
 
-        val fadeSeconds by int("Fade", 4, 1..10, "secs")
+        val fadeSeconds by int("Fade", 4, 0..60, "secs")
 
         val color by color("Color", Color4b(255, 179, 72, 255))
         val colorRainbow by boolean("Rainbow", false)
