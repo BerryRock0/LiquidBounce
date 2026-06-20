@@ -42,7 +42,7 @@ import net.minecraft.world.phys.Vec3
 
 object ModuleTpAura : ClientModule("TpAura", ModuleCategories.COMBAT, disableOnQuit = true) {
 
-    private val attackRange by float("AttackRange", 4.2f, 3f..5f)
+    private val attackRange by float("AttackRange", 4.2f, 0f..10f)
 
     val clicker = tree(Clicker(this, mc.options.keyAttack))
     val mode = choices("Mode", AStarMode, arrayOf(AStarMode, ImmediateMode))
