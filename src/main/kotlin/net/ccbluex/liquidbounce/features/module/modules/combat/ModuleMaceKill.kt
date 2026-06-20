@@ -33,7 +33,7 @@ import kotlin.math.ceil
  */
 object ModuleMaceKill : ClientModule("MaceKill", ModuleCategories.COMBAT) {
 
-    private val fallHeight by int("FallHeight", 22, 1..170).apply { tagBy(this) }
+    private val fallHeight by int("FallHeight", 22, 1..1000).apply { tagBy(this) }
 
     @Suppress("unused")
     private val attackHandler = handler<AttackEntityEvent> { event ->
