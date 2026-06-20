@@ -42,7 +42,7 @@ object ModuleEagle : ClientModule(
     aliases = listOf("FastBridge", "BridgeAssistant", "LegitScaffold")
 ) {
 
-    private val edgeDistance by floatRange("EdgeDistance", 0.4f..0.6f, 0.01f..1.3f)
+    private val edgeDistance by floatRange("EdgeDistance", 0.4f..0.6f, 0f..1f)
         .onChanged {
             currentEdgeDistance = it.random()
         }
