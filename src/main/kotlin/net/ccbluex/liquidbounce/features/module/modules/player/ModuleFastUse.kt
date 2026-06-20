@@ -95,8 +95,8 @@ object ModuleFastUse : ClientModule("FastUse", ModuleCategories.PLAYER, aliases 
         override val parent: ModeValueGroup<Mode>
             get() = modes
 
-        val delay by int("Delay", 0, 0..10, "ticks")
-        val timer by float("Timer", 1f, 0.1f..5f)
+        val delay by int("Delay", 0, 0..20, "ticks")
+        val timer by float("Timer", 1f, 0f..20f)
 
         /**
          * This is the amount of times the packet is sent per tick.
@@ -148,7 +148,7 @@ object ModuleFastUse : ClientModule("FastUse", ModuleCategories.PLAYER, aliases 
         override val parent: ModeValueGroup<Mode>
             get() = modes
 
-        private val tickCooldown by int("TickCooldown", 1, 1..20)
+        private val tickCooldown by int("TickCooldown", 1, 0..20)
 
         @Suppress("unused")
         val tickHandler = handler<GameTickEvent> {
