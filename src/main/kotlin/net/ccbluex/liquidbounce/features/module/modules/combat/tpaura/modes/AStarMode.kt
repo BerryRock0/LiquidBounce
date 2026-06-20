@@ -58,13 +58,13 @@ import net.minecraft.world.phys.AABB
 
 object AStarMode : TpAuraMode("AStar"), AStarPathBuilder {
 
-    private val maximumDistance by int("MaximumDistance", 95, 50..250)
-    private val maximumCost by int("MaximumCost", 250, 50..500)
-    private val tickDistance by int("TickDistance", 3, 1..7)
+    private val maximumDistance by int("MaximumDistance", 95, 0..1000)
+    private val maximumCost by int("MaximumCost", 250, 0..1000)
+    private val tickDistance by int("TickDistance", 3, 0..10)
     override val allowDiagonal by boolean("AllowDiagonal", false)
     private val tpBack by boolean("TpBack", true)
 
-    private val stickAt by int("Stick", 5, 1..10, "ticks")
+    private val stickAt by int("Stick", 5, 0..20, "ticks")
 
     private var pathCache: PathCache? = null
 
