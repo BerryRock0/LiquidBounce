@@ -66,7 +66,7 @@ object ModuleAutoWeapon : ClientModule("AutoWeapon", ModuleCategories.COMBAT) {
     private val autoShieldBreak by boolean("AutoShieldBreak", true)
     private val autoMace by boolean("AutoMace", true)
 
-    private val switchBack by int("SwitchBack", 20, 1..300, "ticks")
+    private val switchBack by int("SwitchBack", 20, 0..1200, "ticks")
 
     private val changeOnActions by multiEnumChoice<ChangeOnAction>(
         "ChangeOn",
