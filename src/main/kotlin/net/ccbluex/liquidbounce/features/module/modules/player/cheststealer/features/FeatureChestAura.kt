@@ -61,12 +61,12 @@ import java.util.function.BooleanSupplier
 object FeatureChestAura : ToggleableValueGroup(ModuleChestStealer, "Aura", true) {
 
     // Configuration fields with appropriate names
-    private val interactionRange by float("Range", 3F, 1F..6F)
+    private val interactionRange by float("Range", 3F, 0F..6F)
     private val wallInteractionRange by float("WallRange", 0f, 0F..6F).onChange {
         // Ensure that wallInteractionRange does not exceed interactionRange
         minOf(interactionRange, it)
     }
-    private val interactionDelay by int("Delay", 5, 1..80, "ticks")
+    private val interactionDelay by int("Delay", 5, 0..1200, "ticks")
     private val swingMode by enumChoice("SwingMode", SwingMode.DO_NOT_HIDE)
 
     private val notDuringCombat by boolean("NotDuringCombat", true)
@@ -87,7 +87,7 @@ object FeatureChestAura : ToggleableValueGroup(ModuleChestStealer, "Aura", true)
 
     // Sub-configurable for managing the await container settings
     private object AwaitContainerSettings : ToggleableValueGroup(this, "AwaitContainer", true) {
-        val retryTimeout by int("Timeout", 10, 1..80, "ticks")
+        val retryTimeout by int("Timeout", 10, 0..1200, "ticks")
         val maxInteractionRetries by int("MaxRetries", 4, 1..10)
     }
 
