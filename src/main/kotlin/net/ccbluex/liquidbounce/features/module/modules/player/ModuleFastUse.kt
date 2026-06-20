@@ -129,7 +129,7 @@ object ModuleFastUse : ClientModule("FastUse", ModuleCategories.PLAYER, aliases 
             get() = modes
 
         val consumeTime by int("ConsumeTime", 15, 0..20)
-        val speed by int("Speed", 20, 1..35, "packets")
+        val speed by int("Speed", 20, 1..100, "packets")
 
         @Suppress("unused")
         val repeatable = tickHandler {
