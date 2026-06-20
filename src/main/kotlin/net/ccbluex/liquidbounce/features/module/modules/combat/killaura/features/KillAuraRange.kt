@@ -39,7 +39,7 @@ object KillAuraRange : RangeValueGroup("Range", 1f, 3f), MinecraftShortcuts {
     private var scanRangeIncrease by floatRange(
         "ScanRangeIncrease",
         2.0f..3.0f,
-        0.0f..7.0f,
+        0.0f..10.0f,
         "blocks"
     ).onChanged { range ->
         currentScanRangeAddition = range.random()
