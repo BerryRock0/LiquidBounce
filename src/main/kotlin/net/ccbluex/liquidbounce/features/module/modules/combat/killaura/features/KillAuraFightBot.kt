@@ -61,12 +61,12 @@ data class CombatTarget(
  */
 object KillAuraFightBot : NavigationBaseValueGroup<CombatContext>(ModuleKillAura, "FightBot", false) {
 
-    private val opponentRange by float("OpponentRange", 3f, 0.1f..10f)
-    private val dangerousYawDiff by float("DangerousYaw", 55f, 0f..90f, suffix = "°")
+    private val opponentRange by float("OpponentRange", 3f, 0f..10f)
+    private val dangerousYawDiff by float("DangerousYaw", 55f, -180f..180f, suffix = "°")
     private val runawayOnCooldown by boolean("RunawayOnCooldown", true)
 
     internal object TargetFilter : ValueGroup("TargetFilter") {
-        internal var range by float("Range", 50f, 10f..100f)
+        internal var range by float("Range", 50f, 0f..100f)
         internal var visibleOnly by boolean("VisibleOnly", true)
         internal var notWhenVoid by boolean("NotWhenVoid", true)
     }
@@ -76,7 +76,7 @@ object KillAuraFightBot : NavigationBaseValueGroup<CombatContext>(ModuleKillAura
      */
     internal object LeaderFollower : ToggleableValueGroup(this, "Leader", false) {
         internal val username by text("Username", "")
-        internal val radius by float("Radius", 5f, 2f..10f)
+        internal val radius by float("Radius", 5f, 0f..10f)
     }
 
     init {
