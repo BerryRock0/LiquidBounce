@@ -60,7 +60,7 @@ internal object KillAuraNotifyWhenFail {
             get() = mode
 
         val volume by float("Volume", 50f, 0f..100f)
-        val pitch by float("Pitch", 0.8f, 0f..2f)
+        val pitch by float("Pitch", 0.8f, -90f..90f)
 
     }
 
